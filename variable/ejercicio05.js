@@ -84,3 +84,106 @@ if(fechaActual >=inicioPrimavera && fechaActual< inicioVerano)
 }
 
 
+console.log("%c2.- Operador Ternario (Validacion : cumple:no_cumple", style_console);
+//En java Script existe una operacion simplificada que valida si una condicion se cumple o no , y que hacer en cada caso 
+
+const edadPersona=18;
+const mayoriaEdadMX=18;
+const mayoriaEdadUS= 21;
+ let evaluarMayoriaEdad= (edad) =>
+edad >=18 ? "Eres mayor de edad .": "No eres mayor de edad"
+console.log("Evaluando la mayoria de edad de una persona ")
+console.log(evaluarMayoriaEdad(edadPersona));
+
+//Sin embargo tenemos que considerar   que la mayoria de edad varia en cada pais por cuestiones legales , por lo que debemos considerar un segundo parametro de validacion 
+evaluarMayoriaEdad=(edad,pais)=> 
+(edad=18 && pais ==="MX")? `En ${pais} eres mayor de edad`:`En ${pais} NO eres mayor de edad `;
+console.log("Eres mayor de edad ")
+console.log("Evaluando la mayoria de edad de una persona en Mexico ")
+console.log(evaluarMayoriaEdad(edadPersona , "MX"));
+console.log("Evaluando la mayoria de edad de una persona en Estados Unidos  ")
+console.log(evaluarMayoriaEdad(edadPersona , "US"));
+
+
+
+
+console.log("%c2.- SWITCH - CASE (Eleccion por valor definifo )", style_console);
+
+//Calculando tu generacion en base a tu edad 
+let anioNacimiento =2003;
+let asignaGeneracion = (anioNacimiento)=>{
+switch(true)
+{
+case (anioNacimiento<1968)://Baby boomers
+    return " Generacion Baby boomers"; 
+    
+    case (anioNacimiento>1968 && anioNacimiento <=1980):
+        return "Generacion X";
+
+    case(anioNacimiento >1980 && anioNacimiento <=1994):
+    return "Generacion Millenials";
+
+    case(anioNacimiento >1994 && anioNacimiento <=2010):
+    return "Generacion Centenials  ";
+    case(anioNacimiento >2010):
+    return "Krystal";
+     
+}
+}
+
+console.log(`Dado que nacvio en el año 2005 soy de la generacion ${asignaGeneracion(2005)}`)
+
+console.log("%c4.-Manejoo de Exepciones (TRY / CATCH)" ,style_console);
+
+//En algunas ocasiones existiran errores que no son culpa del programa , si no del usuario , la red, el so o incluso de un middleware , pero que si duda debemos de controlar para evitar las fallas de ejecucion
+console.log("Intentamos dividir : 0/10 , el resultado es : ")
+try{  // Intenta 
+let result = 0/10; //Dividir un entero entre cero
+console.log(result)
+}
+catch(error)
+{
+    console.log("Ocurrio un eror:  "+ error.message);
+}
+console.log("Intentamos dividir : 0/10 , el resultado es : ")
+try{  // Intenta 
+let result = 10/0; //Dividir un entero entre cero
+console.log(result)
+}
+catch(error)
+{
+    console.log("Ocurrio un eror:  "+ error.message);
+}
+console.log("Intentamos dividir : a/10 el resultado es ")
+try{  // Intenta 
+    let result = "a"/0; //Dividir una letra  entre cero
+    console.log(result)
+    }
+    catch(error)
+    {
+        console.log("Ocurrio un eror:  "+ error.message);
+    }
+    console.log("Intentamos dividir la variable a  : a/10 el resultado es ")
+    try{  // Intenta 
+        let result = a/0; //Intentamos 
+        console.log(result)
+        }
+        catch(error)
+        {
+            console.log("Ocurrio un eror:  "+ error.message);
+        }
+
+
+        console.log("Intentamos dividir :el valor de la variable x / entre el valor de la variable y, el resultado es ")
+    try{  // Intenta 
+        let  = x=8, y=2 , result=x/y; //Intentamos 
+        console.log(result)
+        }
+        catch(error)
+        {
+            console.log("Ocurrio un eror:  "+ error.message);
+        }
+
+
+
+
