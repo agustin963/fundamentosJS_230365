@@ -183,6 +183,93 @@ try{  // Intenta
         {
             console.log("Ocurrio un eror:  "+ error.message);
         }
+        console.log("%c5. Control de Ciclos  (BREAK / CONTINUA) " ,style_console);
+
+        //En algunas ocasiones sera importante detener un ciclo der manera abrupta para controlar casos especiales en un ciclo...
+
+        console.log("Vamos a contarde 1 al 10...")
+        for(let num =1;num<=10;num++){
+            console.log(num)
+        }
+
+        console.log("Ahorita necesitamos que si llegas al 7 pares de contar ... suponiendo que solo por hoy es de mala suerte ..")
+        
+        for( num =1;num<=10;num++)
+            if(num==7)
+                break;
+        else
+            console.log(num);
+
+            console.log("Ahorita necesitamos que si llegas al 7 te saltes ese numero y continues")
+        
+        for( num =1;num<=10;num++)
+            if(num==7)
+                continue;
+        else
+            console.log(num);
+         
+
+            console.log("%c6.- Ciclo Iterativo - (FOR) ", style_console)
+
+            // Recorre de manera iterativo (i), de incremental o decremental 
+
+            console.log("Los dias de la semana son  de orden ascendente son :")
+    let dias=["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sabado"]
+
+    for(let i=0;i<dias.length-1;i++){
+        console.log(dias[i])
+    }
+
+    console.log("Ahora vamos a imprimir con los meses en orden descendente")
+    const meses= ["Enero","Febrero","Narzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"]
+    for(let i=11;i>=0;i--){
+        console.log(meses[i])
+    }
+
+    console.log("%c7.- Ciclo Condicionales - (WHILE)",style_console);
+    //Estos ciclos (BUCKLE) dependen de una condicion para continuar ejecutandose 
+    let finDeSemana = false;
+    let mensaje = "";
+    let j=0;
+    while(j<7){
+        
+        
+        switch(dias[j]){
+            case 0: 
+            finDeSemana = true;
+            mensaje = "Mormingoooooo..... ZzZzZzZzZZZZZzzzzzzz"
+            break;
+            case 1:
+                finDeSemana = false;
+                mensaje ="San Lunes a chambiar ..."
+                break;
+                case 2: 
+                finDeSemana = false;
+                mensaje ="Segundo dia de chamba a darle..."
+                break;
+                case 3: 
+                finDeSemana = false;
+                mensaje ="Ya meroooo el miercoles si se puede "
+                break;
+                case 4: 
+                finDeSemana = false
+                mensaje =" Ya jueveees que hueva vdd? pero si se puede "
+                break;
+                case 5: 
+                finDeSemana = false
+                mensaje = "Vierneeeeeees  si se pudo , recuerda eres lo que comes "
+                break;
+                case 6: 
+                finDeSemana = true;
+                mensaje ="Por fin , fin de semanaaaaaaa si se pudo "
+                break;
+        }
+        console.log(`Dia ${j} ${dias[j]}`)
+        console.log(`Mensaje del dia : ${mensaje[j]}`)
+        j++;
+
+
+    }
 
 
 
