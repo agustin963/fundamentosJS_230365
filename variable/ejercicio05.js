@@ -270,6 +270,110 @@ try{  // Intenta
 
 
     }
+    console.log("%c8.-Ciclos Condicionales , que ejecutan al menos una vez -(DO WHILE) ", style_console);
+
+    //Simulamos una lista de episodios de una temporada 
+    let Series=[
+         "Run coyote Run","Nadie nos va a exrtrañar","Luis Miguel","Juan Gabriel","Perdi mi cuerpo"
+
+    ];
+    let indice=0;
+    let continuarviendo=true;
+    //Esta variable simula la decision del usuario de continuat viendo  
+
+    do{
+        console.log(`Reproduciendo ${Series[indice]}`)
+        indice++;
+        //Simulamos que el usuario decida no ver mas episodios
+        if(indice<Series.length){
+            continuarviendo=confirm("¿Deseas continuar con la siguiente serie ?");
+    }else{
+        console.log("No hay mas episodios para reproducir")
+        continuarviendo=false;
+
+    }
+    }while(continuarviendo && indice<Series.length);
+
+    console.log("Fin de la reproducción")
+
+    //Ciclo para recorrer objetos iterables como mapas , arreglos , cadenas y conjuntos de datos 
+    
+    console.log("%c9.- Ciclos Condicionales para recorrer elemtos  - (FOR OF)", style_console);
+    let seriesTreding = [
+        {nombre: "Nadie nos va a extrañar ", temporada : "3 temporadad", totaldeviewers: "1.5 M", totalReprods : "3.0M"},
+        {nombre: "Run coyote Run", temporada : "2 temporada", totaldeviewers: "1.2 M", totalReprods : "2.5M"},
+        {nombre: "Luis Miguel",  totalReprods : "3.5M"},
+        {nombre: "Juan Gabriel", temporada : "2 temporada"}
+
+
+    ];
+
+    //Usando for .. of  para recorrer la lista
+
+    for(let serie of seriesTreding){
+        console.log(`Nombre : ${serie.nombre} , Temporada : ${serie.temporada} `);
+    }
+    try{
+        console.log (`La ultima serie leida fue : ${serie.nombre}`); //No va a funcionar por la variable serie ya no existe ya que su alcance solo tuvo una vez 
+    }
+    catch(error){
+        console.log("Mensaje de error"+ error.message);
+    }
+
+    console.log("%c10.- Ciclos para recorrer las propiedades de elementos finitos (FOR ... IN) ", style_console);
+
+    //Usando for ..in para recorrer cada serie 
+    for(let i in seriesTreding){
+        console.log(`Serie ${parseInt(i)+1}:`);
+        for(let propiedades in seriesTreding[i]){
+            console.log(`${propiedades}:${seriesTreding[i][propiedades]}`)
+        }
+        console.log("----------------------------------------");
+    }
+
+
+    console.log("%c11.- Ciclos interrumpidos para cada uno de los elementos del arreglo (FOR EACH) ", style_console);
+
+    //Listas de series de tv con temporadas , views y reproducciones 
+
+    let seriesTreding2 = [
+        {nombre: "Nadie nos va a extrañar ", temporada : 3 , viewers: "232323213123323123", reproducciones : "23123213232223221"},
+        {nombre: "Run coyote Run", temporada : 2 , viewers: "32323231111111132323", reproducciones : "2234343434342344"},
+        {nombre: "Luis Miguel",  totalReprods : 3 ,viewers: "69999999999" , reproducciones: "122222222222"},
+        {nombre: "Juan Gabriel", temporada : 2 , viewers : "43543454545", reproducciones: "232434343423"}
+
+
+    ];
+
+    //Usando forEach para recorrer cada serie y calcular la calificacion 
+    seriesTreding2.forEach((serie,index) => {
+    let calificacion = (serie.reproducciones / serie.viewers).toFixed(2);
+    //Calcula la calificacion y la redondea a 2 decimales 
+    console.log(`Serie  ${index +1}`);
+    console.log(`Nombre: ${serie.nombre}`);
+    console.log(`Temporada: ${serie.temporada}`);
+    console.log(`Views: ${serie.viewers}`);
+    console.log(`Reproducciones: ${serie.reproducciones}`);
+    console.log(`Calificacion : ${calificacion}`);
+    console.log("----------------------------------------");
+    });
+
+
+
+    //Usando Filtrer para filtrar y map para transformar la informacion
+    //Lista de series que queremos verificar
+    let seriesDeseadas = ["Nadie nos va a extrañar","Run coyote Run","Luis Miguel"];
+
+    //Usando map e includes para filtrar y obtener los nombres de la series con 3 temporadas 
+    let seriesConTresTemporadas = seriesTreding2
+    .filter(serie => serie.temporada <= 3) // Filtramos las series que tienen 3 temporadas
+    .map(serie => serie.nombre)//Obtenemos solo los nombres de esas raices
+    .filter(nombre => seriesDeseadas.includes(nombre)); // Filtramos las series que estan en la lista de series deseadas
+
+    //Mostrar los resultados 
+    console.log("Series con 3 temporadas que estan en las listas deseadas:");
+    console.log(seriesConTresTemporadas);
+         
 
 
 
