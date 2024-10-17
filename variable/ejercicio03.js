@@ -119,4 +119,62 @@ console.log("%c2.- Variables Independientes ",style_console);
     if(Costo_compra<Cliente_SaldoActual)
         console.log("El cliente tiene saldo suficiente");
 
-   
+    // Actualizar el valor de los Objetos 
+    console.log("%c4.- Actualizacion de los valores de las propiedades de un Objeto",style_console);
+
+    console.log(`El objeto  actualmente tiene los siguientes valores `);
+    console.log(JSON.stringify(producto2,null,2));
+    //Convierte el objeto a una cadena para evitar problemas de referencia 
+    console.log(`Por cuestiones de inflacion el costo del producto ha cambiado y debe de ser actualizado ... de $6829.00 a $6,915.00`);
+    //Para podificar el valor de un objeto basta con igualar el nuevo valor de la propiedad deseada 
+    producto2.Precio=6915.00;
+    console.log(`Los nuevos valores del producto son : `);
+    console.log(producto2)
+
+    // ¿Puedo cambiar no solo el valor ,sino  el tipo de dato a un Objeto en JavaScript?
+    console.log(`---------------------------------------`)
+    console.log(`El objeto  actualmente tiene los siguientes valores `);
+    var tipoDisponibilidad =typeof(producto2.Disponiblidad)
+    console.log(`El tipo de dato de la disponibilidad es : ${tipoDisponibilidad}`)
+    console.log(JSON.stringify(producto2,null,2));
+    producto2.Disponiblidad="SI";
+    let nuevoTipoDisponibilidad = typeof(producto2.Disponiblidad)
+    console.log(producto2)
+    console.log(`El nuevo tipo de dato es : ${nuevoTipoDisponibilidad}`)
+
+
+
+    // Agregar nuevas propiedades al Objeto 
+    console.log("%c5.- Agregar nuevas propiedades al Objeto",style_console);
+    // Para agregar una nueva propiedad utilizaremos el nombre del objeto los corchetes [] y el nuevo de la propiedad con su valor por defecto
+    console.log("Los datos actuales del Comprador son :  ")
+    console.table(Comprador)
+    
+    Comprador[`Direccion`] = "La cumbre, colonia nigromante , NO.64 ,Huauchinango,Puebla, Mexico"
+    Comprador[`Tipo`] = "NUEVO CLIENTE"
+    Comprador[`Actividadreciente`]= true
+    Comprador[`TotalCompras`] = 3516.25
+    console.log("Despues de haber agregado las propiedadea Direccion,Tipo,Actividadreciente,TotalCompras...")
+    console.table(Comprador)
+
+
+    //Eliminar propiedades existentes de un Objeto
+    console.log("%c6.- Eliminar propiedades existentes del Objeto ",style_console);
+    console.log("La estructura y valores del Objeto PEDIDO son previos a la modificacion: ")
+    console.table(Pedido)
+    delete Pedido.TipoPago
+    console.log("Despues de la modificacion")
+    console.table(Pedido)
+
+    console.log("%c7.- Metodos para controlar la mutabilidad de los Objetos , Congelacion (FREEZE) ",style_console);
+    
+    //si deseamos no permitir que los objetos sean modificados ni en estructura , ni en valor , utilizaremos el metodo FREEZE (congelar)
+    console.log(`La estructura actual de los Objetos COMPRADOR es :`)
+    console.table(Comprador)
+    Object.freeze(Comprador)
+    //Intentamos agregar , eliminar o modificar los valores de sus productos 
+    Comprador.FechaUltimaCompra= "05/09/2024 10:15:25"
+    delete Comprador.Tipo;
+    Comprador.Direccion= "Calle 16 de Septiembre #102, Col. Manantiales,Huauchinango,Puebla,Mexico";
+    console.log(`Verificamos si se realizaron los cambios en el Objeto COMPRADOR : `)
+    console.table(Comprador)
