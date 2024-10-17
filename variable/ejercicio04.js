@@ -72,4 +72,45 @@ console.log(`Elemeto en la posicion [0][0]: ${matrizIrregular[2][0]}`)
 console.log(`Elemeto en la posicion [0][0]: ${matrizIrregular[2]}`)
 
 
+// funciones y metodos de arreglos
+//Los metodos de un objeto siempre son invocados usandpo un . y al termino se delimitan los parametros entre (), en caso de que no lleve () , no es un metodo si no una propiedad
+
+
+console.log("%c4.- Funciones o metods de los Arreglos (Array Methos or ) ", style_console)
+console.log("¿Como saber cual es el tamaño de un arreglo?")
+console.log(`meses es un arreglo de tamaño: ${arregloMixto.length}`)
+console.log("mmmmm, eso me da el tamaño de numero de filas de la matriz, pero no como saber el numero de columbas ")
+console.log(`La matriz regular tiene un numero de ${matriz[0].length}`)
+console.log(" Y para los irregulares?")
+// Para saber la dimencion de una matriz irregular 
+
+console.log(`La longuitud de la fila 0 es : `)
+console.log(`La longuitud de la fila 1 es :`)
+console.log(`La longuitud de la fila 2 es :`)
+
+let estudiantes = ["Angel rufino","Idai Vega","Daniel Bravo","Esther Gonzales","Ailton Artiaga"]
+console.log("%c5.- Agregar un nuevo elemento a un arregllo (PUSH) ", style_console)
+console.log("Los elemetos actuales del arreglo son:")
+console.table(estudiantes)
+console.log("Agregamos un nuevo estudiante llamado: Abril Guzamn ")
+estudiantes.push("Abril Guzman")
+console.log("Despues de agregarla los elemtos de los arreglos se ve asi ")
+console.table(estudiantes)
+console.log("Que pasa con los mistos?")
+console.log("El arreglo mixto actualmente tiene los sigueintes datos")
+console.table(arregloMixto)
+console.log("Agregamos la palabra\Hola\, como nuevo elemento")
+arregloMixto.push("Hola")
+console.log("Y tambien agregamos el numero -325454542343434323.23234332 siendo este un BigInt")
+arregloMixto.push(-325454542343434323.23234332)
+console.table(arregloMixto)
+
+console.log("%c6.- Agregar un nuevo elemto a un arreglo (UNSHIFT)  en la posicion inicial  ", style_console)
+console.table(estudiantes)
+console.log("Ahora agregamos a Abishai Flores al comienzo del arreglo . ")
+console.log("La lista actual es")
+estudiantes.unshift("Abishai Flores")
+console.table(estudiantes)
+
+
 
