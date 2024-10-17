@@ -2,7 +2,7 @@
 /* 
    cometariosmultilinea
 */
-var miNombre = "Agsutin J.";
+var miNombre = "Agustin J.";
 var misApellidos ;
 var miEdad = 19 ;
 
@@ -26,3 +26,15 @@ console.log("misApellidos es del tipo:", typeof(misApellidos))
 console.log("miUniversidad es del tipo:", typeof(miUniversidad))
 console.log("miMatricula es del tipo:", typeof(miMatricula))
 console.log("miEdad es del tipo:", typeof(miEdad))
+
+let miFechaNacimiento = "2005-03-04"
+let miColorFavorito;
+
+console.warn("----- Declaracion de variables usando LET")
+console.log("Genial , te voy conociendo mejor, ahora se que naciste el:", miFechaNacimiento
+    ," y tu color favorito es es: mmmmmmmmmmm dejame pensar....") 
+miColorFavorito = "Negro";
+console.log(`creo que es ${miColorFavorito} ,le atine`)
+console.log("Analizando los datos puede deducir que:")
+console.log("miColoFavorito es de tipo ", typeof(miColorFavorito))
+console.log("miFechaDeNacimiento es de tipo ", typeof(miFechaNacimiento))
